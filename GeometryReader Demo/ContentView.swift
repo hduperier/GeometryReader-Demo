@@ -14,25 +14,32 @@ struct ContentView: View {
             
             VStack {
                 GeometryReader {geo in
+                    
                     Rectangle()
-                        .frame(width: geo.size.width/4, height: geo.size.height, alignment: .center)
+                        .foregroundColor(.green)
+                        .frame(width: geo.size.width, height: geo.size.height/2, alignment: .center)
                         .onTapGesture {
                             print("x: \(geo.frame(in: .global).minX) , y: \(geo.frame(in: .global).minY)")
                             print("x: \(geo.frame(in: .local).minX) , y: \(geo.frame(in: .local).minY)")
                         }
                     
+                    Rectangle()
+                        .foregroundColor(.red)
+                        .frame(width: geo.size.width*2/3, height: geo.size.height/8, alignment: .center)
+                        .padding(69.0)
+                        .offset(x: 0.0, y: 69.0)
                     
-                }.position(x:400, y:300) //positions the center point
-                
-                GeometryReader {geo in
-                Rectangle()
-                    .foregroundColor(.green)
-                    .frame(width: geo.size.width/4, height: geo.size.height, alignment: .center)
-                    .onTapGesture {
-                        print("x: \(geo.frame(in: .global).minX) , y: \(geo.frame(in: .global).minY)")
-                        print("x: \(geo.frame(in: .local).minX) , y: \(geo.frame(in: .local).minY)")
-                    }
+                    Rectangle()
+                        .foregroundColor(.purple)
+                        .frame(width: geo.size.width/2, height: geo.size.height/2, alignment: .center)
+                        .offset(x: 0.0, y: 405.0)
+                    
+                    Rectangle()
+                        .foregroundColor(.orange)
+                        .frame(width: geo.size.width/2, height: geo.size.height/2, alignment: .center)
+                        .offset(x: 207.0, y: 405.0)
                 }
+                
             }
         
         
