@@ -22,8 +22,7 @@ struct ContentView: View {
                         }
                     
                     
-                }//.padding([.top], 30)
-                .offset(x: 30, y: 30)
+                }.position(x:400, y:300) //positions the center point
                 
                 GeometryReader {geo in
                 Rectangle()
