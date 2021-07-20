@@ -20,6 +20,12 @@ struct ContentView: View {
                             print("x: \(geo.frame(in: .global).minX) , y: \(geo.frame(in: .global).minY)")
                             print("x: \(geo.frame(in: .local).minX) , y: \(geo.frame(in: .local).minY)")
                         }
+                    
+                    Rectangle()
+                        .foregroundColor(.red)
+                        .frame(width: 100, height: 100, alignment: .center)
+                        //.padding([.leading, .top], 30)
+                        .offset(x:30, y:30)
                 }
                 
                 GeometryReader {geo in
