@@ -10,12 +10,29 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        GeometryReader { geo in
+        
             
-            Rectangle()
-                .frame(width: 200, height: 200, alignment: .center)
-            
-        }
+            VStack {
+                GeometryReader {geo in
+                    Rectangle()
+                        .frame(width: geo.size.width/4, height: geo.size.height/8, alignment: .center)
+                        .onTapGesture {
+                            print("x: \(geo.frame(in: .global).minX) , y: \(geo.frame(in: .global).minY)")
+                            print("x: \(geo.frame(in: .local).minX) , y: \(geo.frame(in: .local).minY)")
+                        }
+                }
+                
+                GeometryReader {geo in
+                Rectangle()
+                    .foregroundColor(.green)
+                    .frame(width: geo.size.width/4, height: geo.size.height/8, alignment: .center)
+                    .onTapGesture {
+                        print("x: \(geo.frame(in: .global).minX) , y: \(geo.frame(in: .global).minY)")
+                        print("x: \(geo.frame(in: .local).minX) , y: \(geo.frame(in: .local).minY)")
+                    }
+                }
+            }
+        
         
         
     }
