@@ -22,7 +22,8 @@ struct ContentView: View {
                         }
                     
                     
-                }.padding([.top], 30)
+                }//.padding([.top], 30)
+                .offset(x: 30, y: 30)
                 
                 GeometryReader {geo in
                 Rectangle()
